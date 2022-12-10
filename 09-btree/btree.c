@@ -1,27 +1,62 @@
-#include <solution.h>
+#include "solution.h"
+
+#include <stdio.h>
 #include <stdlib.h>
 
 struct btree
 {
-	/* implement me */
+	struct btree *left, *right;
+	int *content
+	
 };
 
 struct btree* btree_alloc(unsigned int L)
 {
-	(void) L;
+	if (L==0)
+	{
+		return NULL;
+	}
+	struct btree *tr1 = (struct btree *)malloc(sizeof(struct btree));
+	if (tr1 == NULL)
+	{
+		return errno;
+	}
+	if (L != 0)
+	{
+		tr1->right = btree_alloc((L - 1) / 2);
+		tr1->left = btree_alloc((L - 1) / 2);
+		
+	}
+	tr1 ->content = NULL:
+	//(void) L;
 
-	return NULL;
+	return tr1;
 }
 
 void btree_free(struct btree *t)
 {
-	(void) t;
+	//checking t
+	if (t == NULL)
+	{
+		//exit();
+		return;
+	}
+	if (t != NULL)
+	{
+	free(t->content);
+	btree_free(t->right);
+	btree_free(t->left);
+	free(t);
+	}
+	//(void) t;
+	return;
 }
 
 void btree_insert(struct btree *t, int x)
 {
-	(void) t;
-	(void) x;
+	//(void) t;
+	//(void) x;
+	if (x == NULL
 }
 
 void btree_delete(struct btree *t, int x)
