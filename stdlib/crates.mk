@@ -26,7 +26,7 @@ byteorder_EDITION := 2021
 bytemuck_VERSION := 1.25.2
 bytemuck_SHA256 := 95832e849adfb21180ccb6826a99da14e5d266ae5c2e668e1602cf234f153797
 bytemuck_EDITION := 2018
-bytemuck_FEATURES := extern_crate_alloc aarch64_simd avx512_simd align_offset alloc_uninit const_zeroed impl_core_error min_const_generics must_cast must_cast_extra pod_saturating track_caller transparentwrapper_extra zeroable_atomics zeroable_maybe_uninit zeroable_unwind_fn
+bytemuck_FEATURES := extern_crate_alloc aarch64_simd align_offset alloc_uninit const_zeroed impl_core_error min_const_generics must_cast must_cast_extra pod_saturating track_caller transparentwrapper_extra zeroable_atomics zeroable_maybe_uninit zeroable_unwind_fn
 
 errno_VERSION := 0.3.14
 errno_SHA256 := 39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb
