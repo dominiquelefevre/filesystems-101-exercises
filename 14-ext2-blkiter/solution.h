@@ -33,9 +33,7 @@ void ext2_fs_free(struct ext2_fs *fs);
    * 0 if successful,
    * a (negative) errno code if an IO or memory allocation error occurred,
    * -EINVAL if the inode number is out of range,
-   * -ENOENT if the inode number is valid, but the inode is not in use,
-   * -EPROTO if the inode has a corrupted block list (e.g. block numbers
-             are out of range).
+   * -ENOENT if the inode number is valid, but the inode is not in use.
  */
 int ext2_blkiter_init(struct ext2_blkiter **i, struct ext2_fs *fs, int ino);
 
@@ -45,7 +43,9 @@ int ext2_blkiter_init(struct ext2_blkiter **i, struct ext2_fs *fs, int ino);
    Return values:
    * +1 if successful and @blkno was updated with a new block number,
    * 0 if successful and the iteration is over,
-   * a (negative) errno code if an error occurred.
+   * a (negative) errno code if an IO or memory allocation error occurred,
+   * -EPROTO if the inode has a corrupted block list (e.g. block numbers
+             are out of range).
  */
 int ext2_blkiter_next(struct ext2_blkiter *i, int *blkno);
 
